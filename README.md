@@ -1,78 +1,68 @@
-# 🎓 Corrida para a Faculdade
+# Corrida para a Faculdade
 
-Jogo 2D de corrida infinita feito em **Python + Pygame**. Um estudante está atrasado
-para a aula e precisa desviar dos obstáculos da cidade para chegar a tempo.
-Alcançar **1000 pontos = aprovado**; perder as **3 vidas = reprovado**.
+A 2D endless-runner built with Python and Pygame. A student is late for class and has
+to dodge city obstacles to arrive on time. Reaching 1000 points means passing;
+losing all 3 lives means failing.
 
-> Projeto acadêmico para praticar lógica de jogo e programação orientada a estados.
+Academic project focused on game logic and state-driven programming.
 
-## 🎮 Telas
+## Screens
 
-| Início | Vitória | Derrota |
+| Start | Win | Lose |
 |---|---|---|
-| ![Tela inicial](imagens/obstaculos/tela_inicial.png) | ![Tela de vitória](imagens/obstaculos/tela_venceu.png) | ![Tela de derrota](imagens/obstaculos/tela_reprovado.png) |
+| ![Start screen](imagens/obstaculos/tela_inicial.png) | ![Win screen](imagens/obstaculos/tela_venceu.png) | ![Lose screen](imagens/obstaculos/tela_reprovado.png) |
 
-_A fazer: incluir um GIF de gameplay real._
+## Features
 
-## ✨ O que o jogo tem
+- Clear state machine: menu -> game -> end (win or lose) -> menu
+- Jump physics with gravity and jump force
+- Random obstacles (cone, bin, clock, goalpost) with a spawn interval that shrinks as the score grows
+- Progressive difficulty: speed increases every 100 points, up to a cap
+- 3 lives with temporary invincibility and a blink effect after a collision
+- HUD with a progress bar to the goal, score, high score and lives
+- Persistent high score stored in `recorde.txt` (kept out of version control)
+- Continuously scrolling background, shadows, and custom menu/pause/end screens
+- Fallback: if an image file is missing, the game keeps running with simple shapes
 
-- **Máquina de estados** clara: menu → jogo → fim (vitória ou derrota) → menu
-- **Física de pulo** com gravidade e força de salto
-- **Obstáculos aleatórios** (cone, lixeira, relógio, trave) com intervalo que diminui
-  conforme a pontuação sobe
-- **Dificuldade progressiva**: a velocidade aumenta a cada 100 pontos, até um teto
-- **3 vidas** com invencibilidade temporária e efeito de piscar após a colisão
-- **HUD** com barra de progresso até a meta, pontuação, recorde e vidas
-- **Recorde persistente** salvo em `recorde.txt` (mantido fora do versionamento)
-- **Cenário com rolagem contínua**, sombras e telas de menu/pausa/fim com arte própria
-- **Fallback**: se algum arquivo de imagem faltar, o jogo continua rodando com formas simples
+## Controls
 
-## 🕹️ Controles
-
-| Tecla | Ação |
+| Key | Action |
 |---|---|
-| `Espaço` ou `↑` | Pular |
-| `P` | Pausar / retomar |
-| `Esc` | Voltar ao menu |
+| `Space` or `Up` | Jump |
+| `P` | Pause / resume |
+| `Esc` | Back to menu |
 
-## 🛠️ Tecnologias
+## Tech
 
 - Python 3
 - Pygame
 
-## 📁 Estrutura
+## Structure
 
 ```
 .
-├── main.py              # jogo completo: estados, física, colisão e renderização
+├── main.py              # full game: states, physics, collision and rendering
 └── imagens/
-    ├── background.png   # cenário
-    ├── source.png       # sprite do personagem
-    └── obstaculos/      # obstáculos + telas de interface (início, pausa, vitória, derrota)
+    ├── background.png   # scenery
+    ├── source.png       # player sprite
+    └── obstaculos/      # obstacles + interface screens (start, pause, win, lose)
 ```
 
-## ▶️ Como executar
+## Running
 
 ```bash
 pip install pygame
 python main.py
 ```
 
-O jogo abre em **tela cheia** (`pygame.FULLSCREEN | pygame.SCALED`). Use `Esc` para voltar
-ao menu e feche a janela para encerrar.
+The game opens in full screen (`pygame.FULLSCREEN | pygame.SCALED`). Press `Esc` to
+return to the menu and close the window to quit.
 
-## 👤 Autoria
+## Authorship
 
-Programação de autoria de **Giovanna Ribas dos Reis** — projeto acadêmico individual.
+Game code written by Giovanna Ribas dos Reis - individual academic project.
 
-## 🧭 Próximos passos possíveis
+## Transparency
 
-- Incluir uma captura ou GIF de gameplay real neste README
-- Modo em janela como alternativa à tela cheia
-- Revisar o texto da arte da tela inicial (está escrito "PRESSTONE")
-
-## 🤖 Transparência
-
-- O código do jogo (`main.py`) é de autoria própria, sem geração por IA.
-- Os assets visuais em `imagens/` (cenário, personagem e telas de interface) foram
-  gerados por IA.
+- The game code (`main.py`) is my own work, not AI-generated.
+- The visual assets in `imagens/` (scenery, sprite and interface screens) are AI-generated.
