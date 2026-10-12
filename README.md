@@ -1,5 +1,7 @@
 # Corrida para a Faculdade
 
+English · [Português](README.pt-br.md)
+
 A 2D endless-runner built with Python and Pygame. A student is late for class and has
 to dodge city obstacles to arrive on time. Reaching 1000 points means passing;
 losing all 3 lives means failing.
